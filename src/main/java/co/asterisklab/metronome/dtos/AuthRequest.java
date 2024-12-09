@@ -1,13 +1,6 @@
-package co.asterisklab.metronome.models;
+package co.asterisklab.metronome.dtos;
 
-import jakarta.persistence.*;
-
-@Entity
-@Table(name = "users")
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class AuthRequest {
     private String username;
     private String password;
 
