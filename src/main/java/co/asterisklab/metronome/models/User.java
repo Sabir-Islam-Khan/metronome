@@ -1,4 +1,4 @@
-package co.asterisklab.metronome;
+package co.asterisklab.metronome.models;
 
 import jakarta.persistence.*;
 
