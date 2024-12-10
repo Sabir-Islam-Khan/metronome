@@ -1,6 +1,5 @@
 package co.asterisklab.metronome.services;
 
-
 import co.asterisklab.metronome.dtos.RoutineDTO;
 import co.asterisklab.metronome.entities.Routine;
 import co.asterisklab.metronome.repositories.RoutineRepository;
@@ -75,8 +74,8 @@ public class RoutineService {
     }
 
     // Additional custom methods
-    public List<RoutineDTO> getRoutinesByDay(String day) {
-        return routineRepository.findByDay(day).stream()
+    public List<RoutineDTO> getRoutinesByDayId(String dayId) {
+        return routineRepository.findByDayId(dayId).stream()
                 .map(routine -> {
                     RoutineDTO dto = new RoutineDTO();
                     BeanUtils.copyProperties(routine, dto);

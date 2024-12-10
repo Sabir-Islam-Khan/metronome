@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,16 +21,14 @@ import java.time.LocalTime;
 public class Routine {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "key")
+    private Long key;
 
-    @Column(name = "day", nullable = false)
-    private String day;
+    @Column(name = "room_id", nullable = false)
+    private String roomId;
 
-    @Column(name = "time", nullable = false)
-    private String time;
-
-    @Column(name = "room", nullable = false)
-    private String room;
+    @Column(name = "teacher_initial")
+    private String teacherInitial;
 
     @Column(name = "section", nullable = false)
     private String section;
@@ -36,9 +36,18 @@ public class Routine {
     @Column(name = "course_code", nullable = false)
     private String courseCode;
 
-    @Column(name = "course_name", nullable = false)
-    private String courseName;
+    @Column(name = "day_id", nullable = false)
+    private String dayId;
 
-    @Column(name = "teacher_initial", nullable = false)
-    private String teacherInitial;
+    @Column(name = "start_time", nullable = false)
+    private String startTime;
+
+    @Column(name = "end_time", nullable = false)
+    private String endTime;
+
+    @Column(name = "employee_id", nullable = false)
+    private String employeeId;
+
+    @Column(name = "dept", nullable = false)
+    private String dept;
 }

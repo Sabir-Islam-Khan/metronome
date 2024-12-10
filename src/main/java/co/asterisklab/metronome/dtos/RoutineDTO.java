@@ -5,12 +5,14 @@ import java.time.LocalTime;
 
 @Data
 public class RoutineDTO {
-    private Long id;
-    private String day;
-    private String time;
-    private String room;
+    private Long key;
+    private String roomId;
+    private String teacherInitial;
     private String section;
     private String courseCode;
-    private String courseName;
-    private String teacherInitial;
+    private String dayId;
+    private String startTime;
+    private String endTime;
+    private String employeeId;
+    private String dept;
 }

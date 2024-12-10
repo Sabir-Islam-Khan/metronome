@@ -1,6 +1,5 @@
 package co.asterisklab.metronome.controllers;
 
-
 import co.asterisklab.metronome.dtos.RoutineDTO;
 import co.asterisklab.metronome.services.RoutineService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,8 +43,7 @@ public class RoutineController {
     @PutMapping("/{id}")
     public ResponseEntity<RoutineDTO> updateRoutine(
             @PathVariable Long id,
-            @RequestBody RoutineDTO routineDTO
-    ) {
+            @RequestBody RoutineDTO routineDTO) {
         RoutineDTO updatedRoutine = routineService.updateRoutine(id, routineDTO);
         if (updatedRoutine != null) {
             return new ResponseEntity<>(updatedRoutine, HttpStatus.OK);
@@ -64,9 +62,9 @@ public class RoutineController {
     }
 
     // Get routines by day
-    @GetMapping("/day/{day}")
-    public ResponseEntity<List<RoutineDTO>> getRoutinesByDay(@PathVariable String day) {
-        List<RoutineDTO> routines = routineService.getRoutinesByDay(day);
+    @GetMapping("/day/{dayId}")
+    public ResponseEntity<List<RoutineDTO>> getRoutinesByDayId(@PathVariable String dayId) {
+        List<RoutineDTO> routines = routineService.getRoutinesByDayId(dayId);
         return new ResponseEntity<>(routines, HttpStatus.OK);
     }
 
