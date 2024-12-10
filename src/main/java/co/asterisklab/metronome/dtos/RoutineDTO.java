@@ -7,7 +7,7 @@ import java.time.LocalTime;
 public class RoutineDTO {
     private Long id;
     private String day;
-    private LocalTime time;
+    private String time;
     private String room;
     private String section;
     private String courseCode;

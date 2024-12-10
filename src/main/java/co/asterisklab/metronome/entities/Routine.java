@@ -25,7 +25,7 @@ public class Routine {
     private String day;
 
     @Column(name = "time", nullable = false)
-    private LocalTime time;
+    private String time;
 
     @Column(name = "room", nullable = false)
     private String room;
