@@ -1,7 +1,7 @@
 package co.asterisklab.metronome.repositories;
 
 
-import co.asterisklab.metronome.entities.Routine;
+import co.asterisklab.metronome.models.Routine;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import java.util.List;

@@ -2,7 +2,7 @@ package co.asterisklab.metronome.services;
 
 
 import co.asterisklab.metronome.dtos.RoutineDTO;
-import co.asterisklab.metronome.entities.Routine;
+import co.asterisklab.metronome.models.Routine;
 import co.asterisklab.metronome.repositories.RoutineRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
