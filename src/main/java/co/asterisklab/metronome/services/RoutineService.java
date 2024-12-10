@@ -93,4 +93,27 @@ public class RoutineService {
                 })
                 .collect(Collectors.toList());
     }
+
+    // Get routines by teacher initial
+    public List<RoutineDTO> getRoutinesByTeacherInitial(String teacherInitial) {
+        return routineRepository.findByTeacherInitial(teacherInitial).stream()
+                .map(routine -> {
+                    RoutineDTO dto = new RoutineDTO();
+                    BeanUtils.copyProperties(routine, dto);
+                    return dto;
+                })
+                .collect(Collectors.toList());
+    }
+
+    // Get routines by employee ID
+    public List<RoutineDTO> getRoutinesByEmployeeId(String employeeId) {
+        return routineRepository.findByEmployeeId(employeeId).stream()
+                .map(routine -> {
+                    RoutineDTO dto = new RoutineDTO();
+                    BeanUtils.copyProperties(routine, dto);
+                    return dto;
+                })
+                .collect(Collectors.toList());
+    }
+
 }

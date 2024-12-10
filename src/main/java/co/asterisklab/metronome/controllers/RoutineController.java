@@ -74,4 +74,19 @@ public class RoutineController {
         List<RoutineDTO> routines = routineService.getRoutinesBySection(section);
         return new ResponseEntity<>(routines, HttpStatus.OK);
     }
+
+    @GetMapping("/teacher/{teacherInitial}")
+    public ResponseEntity<List<RoutineDTO>> getRoutinesByTeacherInitial(@PathVariable String teacherInitial) {
+        List<RoutineDTO> routines = routineService.getRoutinesByTeacherInitial(teacherInitial);
+        return new ResponseEntity<>(routines, HttpStatus.OK);
+    }
+
+    // Get routines by employee ID
+    @GetMapping("/employee/{employeeId}")
+    public ResponseEntity<List<RoutineDTO>> getRoutinesByEmployeeId(@PathVariable String employeeId) {
+        List<RoutineDTO> routines = routineService.getRoutinesByEmployeeId(employeeId);
+        return new ResponseEntity<>(routines, HttpStatus.OK);
+    }
+
+
 }

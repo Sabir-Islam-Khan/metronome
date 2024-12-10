@@ -14,4 +14,8 @@ public interface RoutineRepository extends JpaRepository<Routine, Long> {
     List<Routine> findByCourseCode(String courseCode);
 
     List<Routine> findByTeacherInitial(String teacherInitial);
+
+    List<Routine> findByEmployeeId(String employeeId);
+
+
 }
