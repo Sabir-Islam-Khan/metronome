@@ -19,7 +19,12 @@ public class UserProfileService {
     // Create
     public UserProfileDTO createUserProfile(UserProfileDTO userProfileDTO) {
         UserProfile userProfile = new UserProfile();
-        BeanUtils.copyProperties(userProfileDTO, userProfile);
+
+        userProfile.setFirstName(userProfileDTO.getFirstName());
+        userProfile.setLastName(userProfileDTO.getLastName());
+        userProfile.setInitial(userProfileDTO.getInitial());
+        userProfile.setEmployeeId(userProfileDTO.getEmployeeId());
+
         UserProfile savedUserProfile = userProfileRepository.save(userProfile);
 
         UserProfileDTO savedDTO = new UserProfileDTO();

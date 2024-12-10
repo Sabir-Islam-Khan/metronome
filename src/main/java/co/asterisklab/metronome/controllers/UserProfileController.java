@@ -2,6 +2,7 @@ package co.asterisklab.metronome.controllers;
 
 import co.asterisklab.metronome.dtos.UserProfileDTO;
 import co.asterisklab.metronome.services.UserProfileService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,11 +18,15 @@ public class UserProfileController {
 
     // Create a new user profile
     @PostMapping
-    public ResponseEntity<UserProfileDTO> createUserProfile(@RequestBody UserProfileDTO userProfileDTO) {
+    public ResponseEntity<UserProfileDTO> createUserProfile(
+            @Valid @RequestBody UserProfileDTO userProfileDTO
+    ) {
+
+        userProfileDTO.setId(null);
+
         UserProfileDTO createdUserProfile = userProfileService.createUserProfile(userProfileDTO);
         return new ResponseEntity<>(createdUserProfile, HttpStatus.CREATED);
     }
-
     // Get all user profiles
     @GetMapping
     public ResponseEntity<List<UserProfileDTO>> getAllUserProfiles() {
