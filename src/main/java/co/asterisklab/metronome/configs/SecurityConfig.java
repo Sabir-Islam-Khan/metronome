@@ -33,6 +33,7 @@ public class SecurityConfig {
                         .requestMatchers("/swagger-ui/**").permitAll() // Allow all Swagger UI paths
                         .requestMatchers("/v3/api-docs/**").permitAll() // Allow OpenAPI/Swagger API docs
                         .requestMatchers("/swagger-resources/**").permitAll() // Allow Swagger resources
+                        .requestMatchers("/api/**").permitAll()
                         .anyRequest().authenticated())
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
