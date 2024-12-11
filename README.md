@@ -17,7 +17,7 @@ User.java
 UserProfile.java
 
 - Teacher/Employee profile model
--
+- Teacher DTO
 
 Routine.java
 
@@ -29,12 +29,12 @@ Routine.java
 UserService.java
 
 - Authentication logic
--
+
 
 UserProfileService.java
 
 - Profile management
--
+- Profile DTO
 
 RoutineService.java
 
@@ -46,12 +46,12 @@ RoutineService.java
 AuthController.java
 
 - Authentication endpoints
--
+
 
 UserProfileController.java
 
 - Profile endpoints
--
+
 
 RoutineController.java
 
@@ -68,7 +68,7 @@ RoutineController.java
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/metronome.git
+git clone "https://github.com/Sabir-Islam-Khan/metronome.git"
 cd metronome
 ```
 
